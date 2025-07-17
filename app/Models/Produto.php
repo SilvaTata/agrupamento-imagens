@@ -17,4 +17,17 @@ class Produto extends Model
         'ValorUnitario',
         'QtdEstoque'
     ];
+
+
+    public function categoriaProdutos() 
+    {
+        return $this->belongsTo(categoriaProduto::class, 'CodCatProduto');
+    }
+
+    public function vendas()
+    {
+        return $this->belongsToMany(Venda::class, 'produtoVenda', 'CodProduto', 'CodVenda')
+                    ->withPivot('QtdVenda', 'ValorUnitario', 'DataVenda');
+    }
+
 }
