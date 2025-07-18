@@ -9,6 +9,8 @@ class relacionamentoProduto extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'CodProduto1',
         'CodProduto2',

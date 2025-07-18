@@ -9,8 +9,10 @@ class categoriaProduto extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
-        'CatRelacionamento'
+        'CatProduto'
     ];
 
 

@@ -9,6 +9,8 @@ class tipoEntrega extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'CodEntrega',
         'Descricao'

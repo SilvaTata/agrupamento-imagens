@@ -9,6 +9,8 @@ class Produto extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'CodProduto',
         'CodCatProduto',

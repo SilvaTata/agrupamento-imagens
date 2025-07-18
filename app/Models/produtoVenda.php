@@ -9,6 +9,8 @@ class produtoVenda extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'CodProduto',
         'QtdVenda',

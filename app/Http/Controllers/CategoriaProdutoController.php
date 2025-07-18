@@ -17,7 +17,7 @@ class CategoriaProdutoController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'Categoria' => 'required|string|max:55'
+            'CatProduto' => 'required|string|max:55'
         ]);
 
         DB::beginTransaction();
@@ -28,7 +28,7 @@ class CategoriaProdutoController extends Controller
 
             return response()->json([
                 'message' => 'Categoria criada com sucesso!',
-                'categoria' => $categoria
+                'CatProduto' => $categoria
             ], 201);
         } catch (\Exception $e) {
             DB::rollBack();
@@ -51,10 +51,10 @@ class CategoriaProdutoController extends Controller
         $categoria = categoriaProduto::findOrFail($CodCatProduto);
 
         $data = $request->validate([
-            'Categoria' => 'required|string|max:55'
+            'CatProduto' => 'required|string|max:55'
         ]);
 
-        $categoria->uodate($data);
+        $categoria->update($data);
         return response()->json($categoria, 200);
     }
 
